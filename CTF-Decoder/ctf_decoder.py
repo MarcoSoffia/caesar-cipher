@@ -58,12 +58,26 @@ def solve_level_8():
         'fQ==',
     ]
 
+    flag = ""
+    flag += bytes.fromhex(parts[0]).decode()
+    flag += base64.b64decode(parts[1]).decode()
+    flag += bytes.fromhex(parts[2]).decode()
+    flag += base64.b64decode(parts[3]).decode()
+    flag += bytes.fromhex(parts[4]).decode()
+    flag += base64.b64decode(parts[5]).decode()
+    flag += bytes.fromhex(parts[6]).decode()
+    flag += base64.b64decode(parts[7]).decode()
+
+    print(flag)
+
 
 
 
 def solve_level_9():
     ctf = 'bXNobntqNDN6NHlfdDMzYXpfaTR6MzY0fQ=='
-    return decoded.translate(table).encode()
+    decoded = base64.b64decode(ctf).decode()
+
+    print(decoded)
 
 
 if __name__ == '__main__':
